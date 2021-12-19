@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root {
+    --primary-font: 'Quicksand', sans-serif;
+    --secondary-font: 'Poppins', sans-serif;
+  }
+
+.a{
+    background-color:	#1D3557;
+}
+
+.main-btn {
+    display: inline;
+    padding: 8px 45px;
+    margin: auto;
+    text-align: center;
+    background: white;
+    color: #000080;
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 18px;
+  }
+  
+  .main-btn:hover {
+    background-color: whitesmoke;
+    color: black;
+  }
+
+  .main-btn2 {
+    display: inline;
+    padding: 5px 35px;
+    margin: auto;
+    text-align: center;
+    background: #1D3557;
+    color: white;
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 15px;
+  }
+
+  .main-btn2:hover {
+    background-color: whitesmoke;
+    color: black;
+  }
+
+  .top-banner{
+    height: 88vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.863)), url(/img/wp2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .jarakcard{
+      margin-top: 90px;
+      margin-right: 70px;
+  }
+  .jarak{
+    margin-top: 130px;
+    margin-left: 100px;
+    color :white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 100px;
+    letter-spacing: 22px;
+  }
+  .jarak2{
+    margin-top: -15px;
+    margin-left: 100px;
+    color :white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+  }
+  .jarak3{
+    margin-top: -5px;
+    margin-left: 100px;
+    color :white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+  }
+  .colcard{
+      background-color: #e7e5dc;
+      font-family: 'Poppins', sans-serif;
+  }
