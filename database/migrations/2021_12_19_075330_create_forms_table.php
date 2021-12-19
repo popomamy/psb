@@ -36,8 +36,8 @@ class CreateFormsTable extends Migration
             $table->string('akta');
             $table->string('kk');
             $table->string('status');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('major_id')->references('id')->on('majors');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('major_id')->constrained('majors');
         });
     }
 
