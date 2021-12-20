@@ -89,3 +89,8 @@
       background-color: #e7e5dc;
       font-family: 'Poppins', sans-serif;
   }
+
+.main-btn a{
+  text-decoration: none !important;
+  color: black !important;
+}

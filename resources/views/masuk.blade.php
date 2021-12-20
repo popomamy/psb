@@ -28,7 +28,7 @@
 
                 </ul>
                 <form class="d-flex">
-                   <button class="main-btn" type="submit"> <a href="/login">Masuk</a></button>
+                    <button class="main-btn" type="submit"> <a href="/">Daftar</a></button>
                 </form>
             </div>
         </div>
@@ -44,14 +44,8 @@
                 <div class="col">
                     <div class="card jarakcard shadow-lg">
                         <div class="card-body colcard">
-                            <h3 class="text-center">FORM PENDAFTARAN</h3>
+                            <h3 class="text-center">LOGIN</h3>
                             <div class="mt-5 mb-2 ms-3 row">
-                                <label class="col-sm-4 col-form-label">Nama Lengkap</label>
-                                <div class="col-sm-7">
-                                    <input type="text" class="form-control" id="inputPassword">
-                                </div>
-                            </div>
-                            <div class="mb-2 ms-3 row">
                                 <label class="col-sm-4 col-form-label">Email</label>
                                 <div class="col-sm-7">
                                     <input type="email" class="form-control" id="inputPassword">
@@ -66,11 +60,11 @@
                             <div class="mb-2 mt-4 row ">
                                 <label class="col-sm-8 col-form-label"></label>
                                 <div class="col-sm-4">
-                                    <button class="main-btn2" type="submit">Daftar</button>
+                                    <button class="main-btn2" type="submit">Login</button>
                                 </div>
                             </div>
                             <div class="mb-2 ms-3 row">
-                                <label class="col-sm-7 col-form-label">Sudah Mendaftar? <a href="/login">Masuk</a></label>
+                                <label class="col-sm-7 col-form-label">Belum Mendaftar? <a href="/">Daftar</a></label>
                                 <div class="col-sm-5">
 
                                 </div>
