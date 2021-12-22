@@ -28,7 +28,7 @@
 
                 </ul>
                 <form class="d-flex">
-                   <button class="main-btn" type="submit"> <a href="/login">Masuk</a></button>
+                    <button class="main-btn" type="submit"> <a href="{{ route('login') }}">Masuk</a></button>
                 </form>
             </div>
         </div>
@@ -45,32 +45,45 @@
                     <div class="card jarakcard shadow-lg">
                         <div class="card-body colcard">
                             <h3 class="text-center">FORM PENDAFTARAN</h3>
-                            <div class="mt-5 mb-2 ms-3 row">
-                                <label class="col-sm-4 col-form-label">Nama Lengkap</label>
-                                <div class="col-sm-7">
-                                    <input type="text" class="form-control" id="inputPassword">
+                            @if (session()->has('loginError'))
+                                <div class="alert alert-danger alert-dismissible fade show text-left" role="alert">
+                                    {{ session('loginError') }}
+                                    <button type="button" class="close" data-dismiss="alert"
+                                        aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
-                            </div>
+                            @endif
+                            <form action="{{ route('register.store') }}" method="POST">
+                                @csrf
+                                <div class="mt-5 mb-2 ms-3 row">
+                                    <label class="col-sm-4 col-form-label">Nama Lengkap</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" name="name">
+                                    </div>
+                                </div>
+                                <div class="mb-2 ms-3 row">
+                                    <label class="col-sm-4 col-form-label">Email</label>
+                                    <div class="col-sm-7">
+                                        <input type="email" class="form-control" name="email">
+                                    </div>
+                                </div>
+                                <div class="mb-2 ms-3 row">
+                                    <label class="col-sm-4 col-form-label">Password</label>
+                                    <div class="col-sm-7">
+                                        <input type="password" class="form-control" name="password">
+                                    </div>
+                                </div>
+                                <div class="mb-2 mt-4 row ">
+                                    <label class="col-sm-8 col-form-label"></label>
+                                    <div class="col-sm-4">
+                                        <button class="main-btn2" type="submit">Daftar</button>
+                                    </div>
+                                </div>
+                            </form>
                             <div class="mb-2 ms-3 row">
-                                <label class="col-sm-4 col-form-label">Email</label>
-                                <div class="col-sm-7">
-                                    <input type="email" class="form-control" id="inputPassword">
-                                </div>
-                            </div>
-                            <div class="mb-2 ms-3 row">
-                                <label class="col-sm-4 col-form-label">Password</label>
-                                <div class="col-sm-7">
-                                    <input type="password" class="form-control" id="inputPassword">
-                                </div>
-                            </div>
-                            <div class="mb-2 mt-4 row ">
-                                <label class="col-sm-8 col-form-label"></label>
-                                <div class="col-sm-4">
-                                    <button class="main-btn2" type="submit">Daftar</button>
-                                </div>
-                            </div>
-                            <div class="mb-2 ms-3 row">
-                                <label class="col-sm-7 col-form-label">Sudah Mendaftar? <a href="/login">Masuk</a></label>
+                                <label class="col-sm-7 col-form-label">Sudah Mendaftar? <a
+                                        href="{{ route('login') }}">Masuk</a></label>
                                 <div class="col-sm-5">
 
                                 </div>

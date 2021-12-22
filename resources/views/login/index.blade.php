@@ -28,7 +28,8 @@
 
                 </ul>
                 <form class="d-flex">
-                    <button class="main-btn" type="submit"> <a href="/">Daftar</a></button>
+                    <button class="main-btn" type="submit"> <a
+                            href="{{ route('register.index') }}">Daftar</a></button>
                 </form>
             </div>
         </div>
@@ -45,26 +46,39 @@
                     <div class="card jarakcard shadow-lg">
                         <div class="card-body colcard">
                             <h3 class="text-center">LOGIN</h3>
-                            <div class="mt-5 mb-2 ms-3 row">
-                                <label class="col-sm-4 col-form-label">Email</label>
-                                <div class="col-sm-7">
-                                    <input type="email" class="form-control" id="inputPassword">
+                            @if (session()->has('loginError'))
+                                <div class="alert alert-danger alert-dismissible fade show text-left" role="alert">
+                                    {{ session('loginError') }}
+                                    <button type="button" class="close" data-dismiss="alert"
+                                        aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
-                            </div>
+                            @endif
+                            <form action="{{ route('login.auth') }}" method="POST">
+                                @csrf
+                                <div class="mt-5 mb-2 ms-3 row">
+                                    <label class="col-sm-4 col-form-label">Email</label>
+                                    <div class="col-sm-7">
+                                        <input type="email" class="form-control" name="email">
+                                    </div>
+                                </div>
+                                <div class="mb-2 ms-3 row">
+                                    <label class="col-sm-4 col-form-label">Password</label>
+                                    <div class="col-sm-7">
+                                        <input type="password" class="form-control" name="password">
+                                    </div>
+                                </div>
+                                <div class="mb-2 mt-4 row ">
+                                    <label class="col-sm-8 col-form-label"></label>
+                                    <div class="col-sm-4">
+                                        <button class="main-btn2" type="submit">Login</button>
+                                    </div>
+                                </div>
+                            </form>
                             <div class="mb-2 ms-3 row">
-                                <label class="col-sm-4 col-form-label">Password</label>
-                                <div class="col-sm-7">
-                                    <input type="password" class="form-control" id="inputPassword">
-                                </div>
-                            </div>
-                            <div class="mb-2 mt-4 row ">
-                                <label class="col-sm-8 col-form-label"></label>
-                                <div class="col-sm-4">
-                                    <button class="main-btn2" type="submit">Login</button>
-                                </div>
-                            </div>
-                            <div class="mb-2 ms-3 row">
-                                <label class="col-sm-7 col-form-label">Belum Mendaftar? <a href="/">Daftar</a></label>
+                                <label class="col-sm-7 col-form-label">Belum Mendaftar? <a
+                                        href="{{ route('register.index') }}">Daftar</a></label>
                                 <div class="col-sm-5">
 
                                 </div>
@@ -79,7 +93,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-
+    @if (session()->has('success'))
+        <script>
+            alert('Berhasil');
+        </script>
+    @endif
 
 
 </body>

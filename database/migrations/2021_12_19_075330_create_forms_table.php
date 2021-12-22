@@ -14,16 +14,18 @@ class CreateFormsTable extends Migration
     public function up()
     {
         Schema::create('forms', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
             $table->string('nisn')->unique();
             $table->string('jenis_kelamin');
-            $table->date('ttl');
+            $table->string('tempat_lahir');
+            $table->date('tanggal_lahir');
             $table->string('agama');
             $table->string('nama_ortu_wali');
             $table->string('pekerjaan_ortu_wali');
             $table->string('alamat');
             $table->string('kp');
-            $table->string('rt_rw');
+            $table->string('rt');
+            $table->string('rw');
             $table->string('kecamatan');
             $table->string('kab_kota');
             $table->string('no_telp');
@@ -35,9 +37,10 @@ class CreateFormsTable extends Migration
             $table->string('ijazah_skhun');
             $table->string('akta');
             $table->string('kk');
+            $table->string('jurusan');
             $table->string('status');
             $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('major_id')->constrained('majors');
+            $table->timestamps();
         });
     }
 

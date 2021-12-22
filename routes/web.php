@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PendaftarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +18,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::middleware(['guest'])->group(function () {
+    Route::get('login', [LoginController::class, 'index'])->name('login');
+    Route::post('login', [LoginController::class, 'authenticate'])->name('login.auth');
+    Route::resource('register', RegisterController::class)->only('index', 'store');
 });
 
-Route::get('/login', function () {
-    return view('masuk');
-});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', function () {
+        return redirect()->route('dashboard.index');
+    });
 
+    Route::resource('pendaftar', PendaftarController::class)->middleware('role:admin');
+    Route::resource('form', FormController::class)->middleware('role:siswa');
+    Route::resource('dashboard', DashboardController::class)->only('index');
+
+    Route::post('logout', [LoginController::class, 'logout'])->name('login.logout');
+});
